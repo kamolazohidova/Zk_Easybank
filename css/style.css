@@ -22,7 +22,7 @@
 :root {
     --text-color: #9597a5;
     --heading-color: #2d314d;
-    --green: #33d35e;
+    --green: #30c88f;
     --white: #fff;
     --main-bg: #f4f5f7;
 }
@@ -39,6 +39,11 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+}
+
+*:focus {
+    outline: 2px dotted green;
+    outline-offset: 3px;
 }
 
 body {
@@ -162,6 +167,14 @@ select:-webkit-autofill:focus {
     display: inline-block;
 }
 
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo:active {
+    opacity: 0.6;
+}
+
 .logo__img {
     display: block;
     width: 139px;
@@ -188,7 +201,6 @@ select:-webkit-autofill:focus {
 
 .sitenav__link {
     display: block;
-    padding-bottom: 28px;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: -0.2px;
@@ -197,7 +209,7 @@ select:-webkit-autofill:focus {
 
 .sitenav__link:hover {
     color: var(--heading-color);
-    border-bottom: 4px solid var(--green);
+    /* border-bottom: 4px solid var(--green); */
 }
 
 
@@ -208,10 +220,18 @@ select:-webkit-autofill:focus {
     background-image: url();
     background-repeat: no-repeat;
     background-position: 0 0;
+    background-color: rgba(245, 246, 247, 0.5);
+}
+
+.hero__container {
+    display: flex;
+    align-items: flex-start;
 }
 
 .hero__content {
-    width: 450px;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 450px;
 }
 
 .hero__heading {
@@ -285,6 +305,7 @@ select:-webkit-autofill:focus {
     width: 72px;
     height: 72px;
     border-radius: 50%;
+    background: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
     background-color: var(--green);
 }
 
@@ -353,11 +374,16 @@ select:-webkit-autofill:focus {
     margin-right: 30px;
 }
 
+.articles__item {
+    border-radius: 5px;
+}
+
 .articles__img {
     display: block;
     width: 255px;
     height: 200px;
     object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .article {
@@ -381,6 +407,14 @@ select:-webkit-autofill:focus {
     line-height: 20px;
     letter-spacing: -0.3px;
     color: var(--heading-color);
+}
+
+.article-title:hover {
+    color: var(--green);
+}
+
+.article-title:active {
+    opacity: 0.6;
 }
 
 .article-text {
